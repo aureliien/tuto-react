@@ -3,11 +3,24 @@ import './../styles/App.css';
 import Banner from './Banner';
 import Cart from './Cart';
 import ShoppingList from './ShoppingList';
+import { useState } from 'react';
+
 
 function App() {
+
+  const [cart, updateCart] = useState([]);
+  
+
+
   return (
     <div className="App">
-      <Banner /><Cart /><ShoppingList />
+      <Banner />
+      <Cart
+        cart={cart}
+        updateCart={updateCart} />
+      <ShoppingList 
+        cart={cart}
+        updateCart={updateCart} />
     </div>
   )
 
