@@ -1,0 +1,18 @@
+.banner {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    background-color: darkblue;
+    width: 100%;
+    color: white;
+    /* Add more styles as needed */
+}
+
+.leaf-image{
+    width: 15%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
