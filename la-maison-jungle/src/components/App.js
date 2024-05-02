@@ -1,30 +1,26 @@
-import './../styles/App.css';
+import "./../styles/App.css";
 
-import Banner from './Banner';
-import Cart from './Cart';
-import ShoppingList from './ShoppingList';
-import { useState } from 'react';
-
+import Banner from "./Banner";
+import Cart from "./Cart";
+import ShoppingList from "./ShoppingList";
+import { useState, useEffect } from "react";
 
 function App() {
+  const savedCart = localStorage.getItem("cart");
 
-  const [cart, updateCart] = useState([]);
-  
-
+  const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div className="App">
       <Banner />
-      <Cart
-        cart={cart}
-        updateCart={updateCart} />
-      <ShoppingList 
-        cart={cart}
-        updateCart={updateCart} />
+      <Cart cart={cart} updateCart={updateCart} />
+      <ShoppingList cart={cart} updateCart={updateCart} />
     </div>
-  )
+  );
 
-  
   /*
     return (
       <div className="App">
@@ -45,7 +41,6 @@ function App() {
       </div>
     );
   */
-  
 }
 
 export default App;

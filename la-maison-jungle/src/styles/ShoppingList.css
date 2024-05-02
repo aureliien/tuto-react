@@ -1,0 +1,10 @@
+.plantItem {
+  
+  margin: 10px;
+  background-color: rgb(94, 136, 122);
+  padding: '10px';
+  border: '1px solid #ccc';
+  border-radius: 10px;
+  width: 20%;
+  
+}
